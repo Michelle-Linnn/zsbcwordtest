@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiral - ap.cx</title>
+    <style>
+        /* 核心布局样式 */
+        body { margin: 0; background: #000; color: #fff; font-family: sans-serif; overflow: hidden; }
+        #main { display: flex; width: 100vw; height: 100vh; }
+        #preview { flex: 1; display: flex; align-items: center; justify-content: center; position: relative; }
+        #controls { width: 300px; background: rgba(20, 20, 20, 0.8); padding: 20px; border-left: 1px solid #333; z-index: 10; }
+        
+        /* 隐藏的弹窗 */
+        dialog { background: #222; color: #fff; border: 1px solid #444; border-radius: 8px; padding: 20px; }
+        
+        /* 鼠标追踪层 */
+        .jso-cursor-trail-wrapper { pointer-events: none; }
+        
+        canvas { max-width: 100%; max-height: 100%; }
+    </style>
+</head>
+<body class="scroll">
+    <div id="main">
+        <div id="preview">
+            <canvas id="spiralCanvas"></canvas>
+        </div>
+        
+        <div id="controls">
+            <h3>Spiral Controls</h3>
+            <div id="ui-root">
+                </div>
+        </div>
+    </div>
+
+    <dialog id="valueDialog"></dialog>
+    <dialog id="tutorialDialog"></dialog>
+
+    <script>
+        // 这里的脚本对应你截图中的三个 <script> 标签的内容
+        const params = new URLSearchParams(window.location.search);
+        const config = {
+            numPoints: parseInt(params.get('numPoints')) || 2649,
+            // 更多参数...
+        };
+
+        const canvas = document.getElementById('spiralCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function init() {
+            window.addEventListener('resize', resize);
+            resize();
+            render();
+        }
+
+        function resize() {
+            canvas.width = window.innerWidth - (document.getElementById('controls').offsetWidth);
+            canvas.height = window.innerHeight;
+        }
+
+        function render() {
+            // 具体的螺旋算法绘制逻辑
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            // 算法部分...
+            requestAnimationFrame(render);
+        }
+
+        init();
+    </script>
+    
+    <script>
+        // 模拟截图底部的 jso-cursor-trail 逻辑
+        console.log("Cursor trail initialized.");
+    </script>
+</body>
+</html>

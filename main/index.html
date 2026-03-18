@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZSBC World - Professional Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #e41e26;
+            --dark-bg: #1a1a1a;
+            --card-bg: rgba(255, 255, 255, 0.75); /* 提升卡片亮度 */
+            --text-main: #333333;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative; z-index: 10;
+        }
+
+        .logo img { height: 50px; }
+
+        /* Hero 区域背景修复 */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 120px 5% 180px;
+            /* 注意：确保 background.jpg 文件就在 index.html 旁边 */
+            background-image: url('background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        /* 调亮遮罩：从 0.4 改为 0.15 */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.15); 
+            z-index: 1;
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        .hero h1 {
+            font-size: 3.5rem; margin-bottom: 20px; font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        /* 磨玻璃卡片容器 */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 5% 80px;
+            max-width: 1200px;
+            margin: -100px auto 0; /* 向上平移压在背景图上 */
+            position: relative;
+            z-index: 3;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 20px 40px rgba(228, 30, 38, 0.2);
+        }
+
+        .service-card .icon { font-size: 50px; margin-bottom: 20px; display: block; }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--dark-bg); }
+        .service-card p { font-size: 0.95rem; line-height: 1.6; color: #555; }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="zsbc_logo-DTBAt0iz.png" alt="ZSBC Logo" onerror="this.src='https://app.zsbcworld.com/public/upload/zsbc_logo.png'">
+        </div>
+        <div>
+            <a href="#" style="margin-left:20px; text-decoration:none; color:#333;">Home</a>
+            <a href="#" style="margin-left:20px; text-decoration:none; color:#333;">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Connecting the World to China</h1>
+            <p>Professional Consultancy, Education, and Trade Services tailored for your global success.</p>
+        </div>
+    </section>
+
+    <div class="services-container">
+        <div class="service-card">
+            <span class="icon">🎓</span>
+            <h3>Admission Processing</h3>
+            <p>End-to-end support for university placement and student visa processing in China.</p>
+        </div>
+        <div class="service-card">
+            <span class="icon">📊</span>
+            <h3>Business Consultation</h3>
+            <p>Expert guidance on company formation, market entry, and investment strategies.</p>
+        </div>
+        <div class="service-card">
+            <span class="icon">🚢</span>
+            <h3>Import & Export</h3>
+            <p>Comprehensive logistics, shipping, and supply chain solutions connecting global markets.</p>
+        </div>
+        <div class="service-card">
+            <span class="icon">🔤</span>
+            <h3>Translation</h3>
+            <p>Professional interpretation and translation services to bridge communication gaps.</p>
+        </div>
+    </div>
+
+</body>
+</html>
