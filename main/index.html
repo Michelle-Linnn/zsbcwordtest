@@ -90,6 +90,12 @@
         .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--dark-bg); }
         .service-card p { font-size: 0.95rem; line-height: 1.6; color: #555; }
 
+        /* 链接样式修复 / Link style fix */
+        .service-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
     </style>
 </head>
 <body>
@@ -117,11 +123,15 @@
             <h3>Admission Processing</h3>
             <p>End-to-end support for university placement and student visa processing in China.</p>
         </div>
+        
         <div class="service-card">
             <span class="icon">📊</span>
-            <h3>Business Consultation</h3>
+            <a href="/shop/shop.html">
+                <h3>Business Consultation</h3>
+            </a>
             <p>Expert guidance on company formation, market entry, and investment strategies.</p>
         </div>
+
         <div class="service-card">
             <span class="icon">🚢</span>
             <h3>Import & Export</h3>

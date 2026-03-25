@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZSBC Shop - Premium Collections</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent-pink: #f8d7da;
+            --primary-red: #e41e26;
+            --soft-white: #ffffff;
+            --text-dark: #333;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fffafb; /* 淡淡的粉色背景，更具女性气质 */
+            color: var(--text-dark);
+        }
+
+        /* 导航栏导航回主页 */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .logo img { height: 40px; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: #555; font-size: 0.9rem; }
+
+        /* 商店头部 */
+        .shop-header {
+            text-align: center;
+            padding: 60px 5%;
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .shop-header h1 { font-size: 2.5rem; color: var(--text-dark); margin-bottom: 10px; }
+        .shop-header p { color: #888; max-width: 600px; margin: 0 auto; }
+
+        /* 分类筛选器 */
+        .filter-bar {
+            display: flex; justify-content: center; gap: 20px;
+            padding: 30px 0;
+        }
+        .filter-item {
+            padding: 8px 20px; border-radius: 20px; border: 1px solid #ddd;
+            cursor: pointer; transition: 0.3s; font-size: 0.9rem;
+        }
+        .filter-item:hover, .filter-item.active {
+            background-color: var(--primary-red); color: white; border-color: var(--primary-red);
+        }
+
+        /* 商品展示网格 */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px 5% 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover { transform: translateY(-5px); }
+
+        .product-image {
+            width: 100%; height: 350px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .product-info { padding: 20px; }
+        .product-category { font-size: 0.75rem; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+        .product-title { font-size: 1.1rem; margin: 5px 0; font-weight: 600; }
+        .product-price { color: var(--primary-red); font-weight: 700; font-size: 1.2rem; }
+
+        .buy-btn {
+            display: block; width: 100%; padding: 12px;
+            background: var(--text-dark); color: white;
+            text-align: center; text-decoration: none;
+            border-radius: 0 0 15px 15px; transition: 0.3s;
+        }
+        .buy-btn:hover { background: var(--primary-red); }
+
+        footer { text-align: center; padding: 40px; color: #999; font-size: 0.8rem; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="/main/zsbc_logo-DTBAt0iz.png" alt="ZSBC Logo" onerror="this.src='https://app.zsbcworld.com/public/upload/zsbc_logo.png'">
+        </div>
+        <div class="nav-links">
+            <a href="/main/index.html">Home</a>
+            <a href="#">New Arrivals</a>
+            <a href="#">Shipping Policy</a>
+        </div>
+    </nav>
+
+    <header class="shop-header">
+        <h1>Premium Collections</h1>
+        <p>Curated lifestyle essentials from global suppliers, delivered directly to your doorstep.</p>
+    </header>
+
+    <div class="filter-bar">
+        <div class="filter-item active">All</div>
+        <div class="filter-item">Jewelry</div>
+        <div class="filter-item">Clothing</div>
+        <div class="filter-item">Shoes</div>
+        <div class="filter-item">Cosmetics</div>
+    </div>
+
+    <main class="product-grid">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=500&q=80" alt="Jewelry" class="product-image">
+            <div class="product-info">
+                <span class="product-category">Jewelry</span>
+                <h3 class="product-title">Elegant Gold Necklace</h3>
+                <p class="product-price">$49.00</p>
+            </div>
+            <a href="#" class="buy-btn">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80" alt="Clothing" class="product-image">
+            <div class="product-info">
+                <span class="product-category">Clothing</span>
+                <h3 class="product-title">Classic Silk Dress</h3>
+                <p class="product-price">$89.00</p>
+            </div>
+            <a href="#" class="buy-btn">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=500&q=80" alt="Cosmetics" class="product-image">
+            <div class="product-info">
+                <span class="product-category">Cosmetics</span>
+                <h3 class="product-title">Hydrating Skin Serum</h3>
+                <p class="product-price">$35.00</p>
+            </div>
+            <a href="#" class="buy-btn">Add to Cart</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=500&q=80" alt="Shoes" class="product-image">
+            <div class="product-info">
+                <span class="product-category">Shoes</span>
+                <h3 class="product-title">Minimalist Heel Sandals</h3>
+                <p class="product-price">$120.00</p>
+            </div>
+            <a href="#" class="buy-btn">Add to Cart</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ZSBC World. Dropshipping excellence from AliExpress, Spocket & CJ Dropshipping.</p>
+    </footer>
+
+</body>
+</html>
