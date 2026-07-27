@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=1400" />
 <title>Bespoke Engagements — VantagePoint Integrated Services Ltd</title>
 <meta name="description" content="For mandates that defy categorization. — VantagePoint Integrated Services Ltd." />
 <link rel="icon" type="image/png" href="logo_mark.png" />
@@ -203,24 +203,13 @@ button{font-family:inherit; cursor:pointer; border:0; background:none; color:inh
 .wa-float:hover{transform:translateY(-4px) scale(1.05)}
 .wa-float svg{width:26px; height:26px}
 
-@media (max-width:1024px){
-  .svc-hero-inner{grid-template-columns:1fr; gap:50px}
-  .case-grid{grid-template-columns:1fr; gap:40px}
-  .off-grid{grid-template-columns:1fr}
-  .timeline{grid-template-columns:repeat(2,1fr); gap:36px 20px}
-  .timeline::before{display:none}
-  .rel-grid{grid-template-columns:1fr}
-  .mini-grid{grid-template-columns:repeat(3,1fr)}
-  .nav-links{display:none}
-  .nav-toggle{display:flex}
-  .nav-links.open{display:flex; position:fixed; top:70px; left:0; right:0; background:rgba(5,16,46,.98); flex-direction:column; padding:24px 30px; gap:8px; align-items:stretch; border-bottom:1px solid var(--line)}
-  .nav-links.open a{padding:14px; text-align:center}
-}
-@media (max-width:600px){
-  .mini-stats{grid-template-columns:1fr}
-  .section{padding:80px 24px}
-  .svc-hero{padding:30px 24px 70px}
-}
+
+
+
+/* Fixed desktop layout — no responsive */
+html,body{min-width:1400px}
+.nav-toggle{display:none !important}
+.nav-links{display:flex !important; position:static !important; height:auto !important; background:transparent !important; flex-direction:row !important; padding:0 !important; align-items:center !important}
 </style>
 </head>
 <body>
